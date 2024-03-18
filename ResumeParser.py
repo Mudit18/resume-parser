@@ -3,12 +3,12 @@ from openai import OpenAI
 
 client = OpenAI()
 
-reader = PdfReader("sample.pdf")
+reader = PdfReader("sample/sample.pdf")
 text = ""
 for page in reader.pages:
     text += page.extract_text() + "\n"
 
-print(text)
+# print(text)
 
 response = client.chat.completions.create(
   model="gpt-3.5-turbo-0125",
